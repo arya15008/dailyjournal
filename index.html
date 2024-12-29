@@ -1,0 +1,414 @@
+<?php
+include "koneksi.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Journal Daniel</title>
+  <link rel="icon"
+    href="https://images.unsplash.com/photo-1720293315632-37efe958d5ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Daily Journal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-dark">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#article">Article</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#schedule">Schedule</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutme">About Me</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Admin</a>
+          </li>
+        </ul>
+
+        <button id="btn_dark" class="btn btn-dark me-2 mb-2 mt-2">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button id="btn_light" class="btn btn-danger mb-2 mt-2">
+          <i class="bi bi-brightness-high-fill"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="text-center p-5 bg-danger-subtle text-sm-start">
+    <div class="container">
+      <div class="d-sm-flex flex-sm-row-reverse align-items-center">
+        <img
+          src="https://images.unsplash.com/photo-1730462826088-ef07f32b2629?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8"
+          class="rounded img-fluid" width="300" />
+        <div>
+          <h1 class="h1 fw-bold display-4">
+            Create Memories, Save Memories, Everyday
+          </h1>
+          <h4 class="h4 lead display-6">
+            Mencatat semua kegiatan sehari hari tanpa pengecualian
+          </h4>
+          <h6>
+            <span id="tanggal"></span>
+            <span id="jam"></span>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Artikel begin -->
+      <section id="artikel" class="text-center p-5">
+        <div class="container">
+            <h1 class="fw-bold display-4 pb-3">Artikel</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                <div class="col">
+                    <div class="card">
+                        <img src="https://cdn.rri.co.id/berita/8/1676086521-blob" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP2AN8Ceb40luYIl38d0na4Mo6ZEsZXb2ITQ&s" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://awsimages.detik.net.id/community/media/visual/2023/08/25/udinus-buka-fakultas-kedokteran.jpeg?w=1200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLRYSye9n-kbRqU2XGk3vpzqfrerk3emPuA&s" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF5cBEeY2aQyp1WLcNJPuZXI8Kz565lU_7YA&s" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Artikel end -->
+ <!-- Schedule begin -->
+ <section id="schedule" class="text-center p-5">
+  <div class="container">
+      <h1 class="fw-bold display-4 pb-3">Schedule</h1>
+      <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title bg-danger text-white p-2">SENIN</h5>
+                      <ul class="list-unstyled">
+                          <li>07:00 - 08:40: Basis data</li>
+                          <li>09:30 - 11:30: Rekayasa Perangkat Lunak</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title bg-danger text-white p-2">SELASA</h5>
+                      <ul class="list-unstyled">
+                          <li>FREE</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title bg-danger text-white p-2">RABU</h5>
+                      <ul class="list-unstyled">
+                          <li>07:00 - 09:30: Logika Informatika</li>
+                          <li>10:20 - 12:00: Pemrograman Berbasis Web</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title bg-danger text-white p-2">KAMIS</h5>
+                      <ul class="list-unstyled">
+                          <li>07:00 - 09:30: Probabilitas Dan Statistika</li>
+                          <li>09:30 - 12:00: Sistem Informasi</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title bg-danger text-white p-2">JUMAT</h5>
+                      <ul class="list-unstyled">
+                          <li>09:30 - 12:00: Sistem Operasi</li>
+                          <li>12:30 - 14:10: Basis Data Teori</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+  <!-- Schedule end -->
+
+ <!-- About Me begin -->
+<section id="aboutMe" class="text-center p-5 bg-danger-subtle">
+  <div class="container">
+      <h1 class="fw-bold display-4 pb-3">About Me</h1>
+      <div class="row align-items-center">
+          <!-- Kolom Foto -->
+          <div class="col-md-6 text-center">
+              <img src="https://scontent.cdninstagram.com/v/t51.2885-19/469989761_8734544116594166_9160157445731492047_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_ht=scontent.cdninstagram.com&_nc_cat=102&_nc_ohc=9IJs6F2wR-MQ7kNvgHm2MSd&_nc_gid=fa8d939f2b4345218e53b0dbfc695aa5&edm=APs17CUBAAAA&ccb=7-5&oh=00_AYDG6ZzAM0c8yYhhZx90NoU1Svhgt_w6iLAHGK1gEQXbGw&oe=675EC99F&_nc_sid=10d13b" 
+                   class="rounded-circle img-fluid" 
+                   style="width: 300px; height: 300px; object-fit: cover;"
+                   alt="Foto Mahasiswa">
+          </div>
+          <!-- Kolom Data Mahasiswa -->
+          <div class="col-md-6 text-md-start text-center mt-4 mt-md-0">
+              <div class="fs-4">
+                  <p><strong>NIM:</strong> A11.2023.15008</p>
+                  <p><strong>Nama:</strong> Arya Febi Prasetyawan</p>
+                  <p><strong>Program Studi:</strong> Teknik Informatika</p>
+                  <p><strong>Universitas:</strong> Dian Nuswantoro</p>
+                      <a href="https://www.dinus.ac.id" 
+                         target="_blank" 
+                         class="text-decoration-none">
+                          Universitas Dian Nuswantoro
+                      </a>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- About Me end -->
+
+  <footer id="footer" class="text-center p-5">
+    <div>
+      <a href="https://www.instagram.com/udinusofficial" target="_blank"><i class="bi bi-instagram h2 p-2 text-dark"></i></a>
+      <a href="https://twitter.com/udinusofficial" target="_blank"><i class="bi bi-twitter h2 p-2 text-dark"></i></a>
+      <a href="https://wa.me/628126885577" target="_blank"><i class="bi bi-whatsapp h2 p-2 text-dark"></i></a>
+  </div>
+
+    <div id="copyright">Arya Febi Prasetyawan &copy; 2024</div>
+  </footer>
+
+  <script type="text/javascript">
+    window.setTimeout("tampilWaktu()", 1000);
+
+    function tampilWaktu() {
+      var waktu = new Date();
+      var bulan = waktu.getMonth() + 1;
+
+      setTimeout("tampilWaktu()", 1000);
+      document.getElementById("tanggal").innerHTML =
+        waktu.getDate() + "/" + bulan + "/" + waktu.getFullYear() + " | ";
+      document.getElementById("jam").innerHTML =
+        waktu.getHours() +
+        ":" +
+        waktu.getMinutes() +
+        ":" +
+        waktu.getSeconds();
+    }
+
+    document.getElementById("btn_dark").onclick = function () {
+      darkMode();
+    };
+
+    document.getElementById("btn_light").onclick = function () {
+      lightMode();
+    };
+
+    function darkMode() {
+      document.body.classList.add("bg-dark");
+      document.getElementById("hero").classList.remove("bg-danger-subtle");
+      document.getElementById("hero").classList.add("bg-secondary");
+
+      document.getElementById("aboutme").classList.add("bg-secondary");
+      document.getElementById("aboutme").classList.remove("bg-danger-subtle");
+
+      document.getElementById("tanggal").classList.add("text-white");
+      document.getElementById("jam").classList.add("text-white");
+
+      document.getElementById("article").classList.add("bg-dark");
+
+      document.getElementById("schedule").classList.add("bg-dark");
+      document.getElementById("schedule").classList.remove("bg-light");
+
+      const h1s = document.getElementsByClassName("h1");
+      for (let i = 0; i < h1s.length; i++) {
+        h1s[i].classList.add("text-white");
+      }
+
+      const h6s = document.getElementsByClassName("h6");
+      for (let i = 0; i < h6s.length; i++) {
+        h6s[i].classList.add("text-white");
+      }
+
+      const h3s = document.getElementsByClassName("h3");
+      for (let i = 0; i < h3s.length; i++) {
+        h3s[i].classList.add("text-white");
+      }
+
+      const h4s = document.getElementsByClassName("h4");
+      for (let i = 0; i < h4s.length; i++) {
+        h4s[i].classList.add("text-white");
+      }
+
+      const kartus = document.getElementsByClassName("kartu");
+      for (let i = 0; i < kartus.length; i++) {
+        kartus[i].classList.add("bg-secondary");
+      }
+
+      const juduls = document.getElementsByClassName("judul");
+      for (let i = 0; i < juduls.length; i++) {
+        juduls[i].classList.add("text-white");
+      }
+
+      const artikels = document.getElementsByClassName("artikel");
+      for (let i = 0; i < artikels.length; i++) {
+        artikels[i].classList.add("text-white");
+      }
+
+      document.getElementById("gallery").classList.remove("bg-danger-subtle");
+      document.getElementById("gallery").classList.add("bg-secondary");
+
+      document.getElementById("footer").classList.add("bg-dark");
+
+      const ikons = document.getElementsByClassName("ikon");
+      for (let i = 0; i < ikons.length; i++) {
+        ikons[i].classList.remove("text-dark");
+        ikons[i].classList.add("text-white");
+      }
+
+      document.getElementById("copyright").classList.add("text-white");
+    }
+
+    function lightMode() {
+      document.body.classList.add("bg-light");
+      document.getElementById("hero").classList.remove("bg-secondary");
+      document.getElementById("hero").classList.add("bg-danger-subtle");
+
+      document.getElementById("aboutme").classList.remove("bg-secondary");
+      document.getElementById("aboutme").classList.add("bg-danger-subtle");
+
+      document.getElementById("tanggal").classList.remove("text-white");
+      document.getElementById("jam").classList.remove("text-white");
+
+      document.getElementById("article").classList.remove("bg-dark");
+      document.getElementById("article").classList.add("bg-light");
+
+      document.getElementById("schedule").classList.remove("bg-dark");
+      document.getElementById("schedule").classList.add("bg-light");
+
+
+      const h1s = document.getElementsByClassName("h1");
+
+      for (let i = 0; i < h1s.length; i++) {
+        h1s[i].classList.remove("text-white");
+      }
+
+      const h6s = document.getElementsByClassName("h6");
+      for (let i = 0; i < h6s.length; i++) {
+        h6s[i].classList.remove("text-white");
+      }
+
+      const h3s = document.getElementsByClassName("h3");
+      for (let i = 0; i < h3s.length; i++) {
+        h3s[i].classList.remove("text-white");
+      }
+
+      const h4s = document.getElementsByClassName("h4");
+      for (let i = 0; i < h4s.length; i++) {
+        h4s[i].classList.remove("text-white");
+      }
+
+      const kartus = document.getElementsByClassName("kartu");
+      for (let i = 0; i < kartus.length; i++) {
+        kartus[i].classList.remove("bg-secondary");
+      }
+
+      const juduls = document.getElementsByClassName("judul");
+      for (let i = 0; i < juduls.length; i++) {
+        juduls[i].classList.remove("text-white");
+      }
+
+      const artikels = document.getElementsByClassName("artikel");
+      for (let i = 0; i < artikels.length; i++) {
+        artikels[i].classList.remove("text-white");
+      }
+
+      document.getElementById("gallery").classList.remove("bg-secondary");
+      document.getElementById("gallery").classList.add("bg-danger-subtle");
+
+      document.getElementById("footer").classList.remove("bg-dark");
+      document.getElementById("footer").classList.add("bg-light");
+
+      const ikons = document.getElementsByClassName("ikon");
+      for (let i = 0; i < ikons.length; i++) {
+        ikons[i].classList.remove("text-white");
+        ikons[i].classList.add("text-dark");
+      }
+
+      document.getElementById("copyright").classList.remove("text-white");
+    }
+  </script>
+
+  <!-- <script src="index_js.js"></script> -->
+</body>
+
+</html>
